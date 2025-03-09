@@ -1,0 +1,83 @@
+
+Command: shopt -s histappend
+Output:
+
+Exit Code: 0
+----
+Command: pwd
+Output:
+/home/anjal/Desktop/miniproject
+Exit Code: 0
+----
+Command: nvm use v22
+Output:
+Command 'nvm' not found, did you mean:
+  command 'nsm' from snap nift (3.0.3)
+  command 'nvim' from snap nvim (v0.10.4)
+  command 'gvm' from snap gvm (1.1.0)
+  command 'nm' from deb binutils (2.38-4ubuntu2.6)
+  command 'nsm' from deb linuxptp (3.1.1-3)
+  command 'nvi' from deb nvi (1.81.6-17)
+  command 'pvm' from deb pvm (3.4.6-3.2)
+  command 'lvm' from deb lvm2 (2.03.11-2.1ubuntu4)
+  command 'num' from deb quickcal (2.4-1)
+  command 'kvm' from deb qemu-system-x86 (1:6.2+dfsg-2ubuntu6.23)
+  command 'npm' from deb npm (8.5.1~ds-1)
+  command 'nam' from deb nam (1.15-5.2)
+  command 'vm' from deb mgetty-voice (1.2.1-1.1)
+  command 'nvim' from deb neovim (0.6.1-3)
+  command 'nvme' from deb nvme-cli (1.16-3ubuntu0.3)
+See 'snap info <snapname>' for additional versions.
+Exit Code: 127
+----
+Command: npm run dev
+Output:
+
+> miniproject@0.1.0 dev
+> next dev
+
+You are using Node.js 16.16.0. For Next.js, Node.js version "^18.18.0 || ^19.8.0 || >= 20.0.0" is required.
+Exit Code: 1
+----
+Command: nvm use v22
+Output:
+Command 'nvm' not found, did you mean:
+  command 'nvim' from snap nvim (v0.10.4)
+  command 'nsm' from snap nift (3.0.3)
+  command 'gvm' from snap gvm (1.1.0)
+  command 'kvm' from deb qemu-system-x86 (1:6.2+dfsg-2ubuntu6.23)
+  command 'npm' from deb npm (8.5.1~ds-1)
+  command 'nm' from deb binutils (2.38-4ubuntu2.6)
+  command 'num' from deb quickcal (2.4-1)
+  command 'pvm' from deb pvm (3.4.6-3.2)
+  command 'nsm' from deb linuxptp (3.1.1-3)
+  command 'nvi' from deb nvi (1.81.6-17)
+  command 'nvim' from deb neovim (0.6.1-3)
+  command 'nam' from deb nam (1.15-5.2)
+  command 'nvme' from deb nvme-cli (1.16-3ubuntu0.3)
+  command 'vm' from deb mgetty-voice (1.2.1-1.1)
+  command 'lvm' from deb lvm2 (2.03.11-2.1ubuntu4)
+See 'snap info <snapname>' for additional versions.
+Exit Code: 127
+----
+Command: nvm -v
+Output:
+Command 'nvm' not found, did you mean:
+  command 'nsm' from snap nift (3.0.3)
+  command 'nvim' from snap nvim (v0.10.4)
+  command 'gvm' from snap gvm (1.1.0)
+  command 'num' from deb quickcal (2.4-1)
+  command 'vm' from deb mgetty-voice (1.2.1-1.1)
+  command 'nvme' from deb nvme-cli (1.16-3ubuntu0.3)
+  command 'nm' from deb binutils (2.38-4ubuntu2.6)
+  command 'nvi' from deb nvi (1.81.6-17)
+  command 'nvim' from deb neovim (0.6.1-3)
+  command 'nsm' from deb linuxptp (3.1.1-3)
+  command 'npm' from deb npm (8.5.1~ds-1)
+  command 'nam' from deb nam (1.15-5.2)
+  command 'lvm' from deb lvm2 (2.03.11-2.1ubuntu4)
+  command 'pvm' from deb pvm (3.4.6-3.2)
+  command 'kvm' from deb qemu-system-x86 (1:6.2+dfsg-2ubuntu6.23)
+See 'snap info <snapname>' for additional versions.
+Exit Code: 127
+----

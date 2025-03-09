@@ -2,7 +2,6 @@ import { Users } from "../../../config/schema";
 import { eq } from "drizzle-orm";
 import { NextResponse } from "next/server";
 import { db } from "../../../config/db";
-import { User } from "lucide-react";
 
 export async function POST(req) {
   const { user } = await req.json();
@@ -16,7 +15,7 @@ export async function POST(req) {
       .where(eq(Users.email, user?.primaryEmailAddress?.emailAddress))
       .execute();
 
-    console.log("userInfo", userInfo);
+    console.log("userInfo: ", userInfo);
 
     //if not
     if (userInfo?.length == 0) {
