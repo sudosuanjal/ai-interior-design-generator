@@ -6,8 +6,13 @@ import { RoomType } from "./_components/RoomType";
 import { DesignType } from "./_components/DesignType";
 import { AdditionalReq } from "./_components/AdditionalReq";
 import { Button } from "@/components/ui/button";
+import { getDownloadURL, uploadBytes } from "firebase/storage";
+import axios from "axios";
+import { useUser } from "@clerk/nextjs";
 
 function CreateNew() {
+  const { user } = useUser();
+
   const [formData, setFormData] = useState([]);
   const onHandleInputChange = (value, filedName) => {
     setFormData((prev) => ({
@@ -16,6 +21,30 @@ function CreateNew() {
     }));
 
     console.log(formData);
+  };
+  const generateAiImage = async () => {
+    const rawImageUrl = await saveRawImageToFirebase();
+    const result = await axios.post("/api/redesing-room", {
+      imageUrl: rawImageUrl,
+      roomType: formData?.roomType,
+      designType: formData?.designType,
+      additionalReq: formData?.additionalReq,
+      userEmail: user?.primaryEmailAddress.emailAddress,
+    });
+    console.log(result.data);
+  };
+
+  const saveRawImageToFirebase = async () => {
+    const fileName = Date.now() + "_.raw.png";
+    const imageRef = ref(storage, "room-redesign/" + fileName);
+
+    await uploadBytes(imageRef, formData.image).then((resp) => {
+      console.log("file uploaded");
+    });
+
+    const downloadUrl = await getDownloadURL(imageRef);
+    console.log(downloadUrl);
+    return downloadUrl;
   };
 
   return (
@@ -50,7 +79,9 @@ function CreateNew() {
             addReqInput={(value) => onHandleInputChange(value, "additionalReq")}
           />
           {/* button to generate */}
-          <Button className="w-full mt-5">generate</Button>
+          <Button className="w-full mt-5" onClick={generateAiImage}>
+            generate
+          </Button>
         </div>
       </div>
     </div>
